@@ -1,0 +1,65 @@
+html {
+  max-height: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#instruction {
+  display: none;
+}
+
+.playLuckZone {
+  display: none;
+}
+
+/* css for the table */
+table,tr,td {
+  border: 1px solid black;
+}
+table {
+  border-collapse: collapse;
+  background-color: aliceblue;
+}
+tr {
+  height: 40px;
+
+}
+td {
+  width: 40px;
+  text-align: center;
+}
+
+/* countdown tab */
+#countDown {
+  display: none;
+}
+
+/* game over div */
+
+table img {
+  width: 40px;
+  height: 40px;
+}
+
+#image1, #image2, #image3, #image4 {
+  background-color: rgba(20, 72, 216, 0.26);
+}
+
+/* making the images setting the comparison true hidden */
+#firstImage img {
+  visibility: hidden;
+}
+#secondImage img {
+  visibility: hidden;
+}
+#thirdImage img {
+  visibility: hidden;
+}
+#fourthImage img {
+  visibility: hidden;
+}

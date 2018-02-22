@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>&amp;Luck Zone</title>
+    <link rel='stylesheet' href='luckZone.css'>
+  </head>
+  <body>
+    <div>
+      <h1>&amp;LuckZone</h1><span>about</span>
+    </div>
+    
+    <div>
+      Submit Your nickname
+      <input id='nickname' type='text'>
+      <button onclick='submitNickname()' type='submit'>submit</button>
+      <p id='alert'></p>
+    </div>
+    
+    <div id='blockUsername'>
+    
+    </div>
+    <!-- welcome the visitor -->
+    <div id='welcomeNickname'>
+    
+    </div>
+    
+    <!-- div for the instruction tab -->
+    <div id='instruction'>
+      <p>instruction</p>
+      <span>put instruction here</span>
+    </div>
+    
+    <!-- ready to play game (play button) -->
+    <div>
+      <p>Click play to start luckZone</p>
+      <button id='play' onclick='startLuckZone()'>Play</button>
+    </div>
+    
+    <!-- random no input (dice roll button)-->
+    <div id='playLuckZone' class='playLuckZone'>
+      <div>
+        
+        <button id='button1' onclick='moveImage.moveImage1()'>move soldier 1</button>
+      </div>
+      <div>
+        
+        <button id='button2' onclick='moveImage.moveImage2()'>move soldier 2</button>
+      </div>
+      <div>
+        
+        <button id='button3' onclick='moveImage.moveImage3()'>move soldier 3</button>
+      </div>
+      <div>
+        
+        <button id='button4' onclick='moveImage.moveImage4()'>move soldier 4</button>
+      </div>
+    </div>
+    
+    <!-- time counting down -->
+    <div id='countDown'>Your time starts now: <span id="time">05:00</span></div>
+    <p id='gameOver'></p>
+    
+    <!-- table row and column-->
+    <div id='table'>
+      <table>
+        <tbody>
+          <tr id='tablerow'>
+            <td><img src="images/robot1.jpg" id="img1"></td>
+            <td id='firstImage'><img src="images/robot1.jpg" id="img1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="images/robot3.jpg" id="img3"></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id='thirdImage'><img src="images/robot3.jpg" id="img3"></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id='image1'>1</td>
+            <td id='image3'>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id='image2'>2</td>
+            <td id='image4'>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id='tablerow'>
+            <td></td>
+            <td><img src="images/robot2.jpg" id="img2"></td>
+            <td id='secondImage'><img src="images/robot2.jpg" id="img2"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="images/robot4.jpg" id="img4"></td>
+            <td id='fourthImage'><img src="images/robot4.jpg" id="img4"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p id='congrats'></p>
+    </div>
+    <!-- starting all over -->
+    <div>
+      <button onclick='location.reload()'>start over as a new player</button>
+    </div>
+    <input type='checkbox'>
+  
+    <script src='luckZone.js'></script>
+  </body>
+</html>
