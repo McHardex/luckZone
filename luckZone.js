@@ -9,6 +9,11 @@ var disableBtn4 = false;
 function submitNickname() {
   if (blockInput) {
     document.getElementById('blockUsername').textContent = 'You can not set username more than once';
+} else if (getNickname.value === '') {
+    var startPlay = document.getElementById('playLuckZone');
+    startPlay.style.display = 'none';
+    var alertMe = document.getElementById('alert');
+    alertMe.textContent = 'Please enter your nickname to play luckZone';
 } else {
   var welcomeUser = document.getElementById('welcomeNickname');
   welcomeUser.textContent = 'Welcome to LuckZone ' + getNickname.value + '!';
@@ -23,19 +28,23 @@ function submitNickname() {
 }
 }
 
+var submitNick = document.getElementById('submit');
+submitNick.addEventListener('click', submitNickname, false);
+
 // when play is clicked to start the game this function is called(dice roll input)
 function startLuckZone() {
 if (getNickname.value === '') {
-    var startPlay = document.getElementById('playLuckZone');
-    startPlay.style.display = 'none';
-    var alertMe = document.getElementById('alert');
-    alertMe.textContent = 'please enter your nickname to play luckZone';
-  } else {
+  var startPlay = document.getElementById('playLuckZone');
+  startPlay.style.display = 'none';
+  var alertMe = document.getElementById('alert');
+  alertMe.textContent = 'Please enter your nickname to play luckZone';
+} else if (instruction.style.display != 'block') {
+  var alertMe = document.getElementById('alert');
+  alertMe.textContent = 'Please press submit button';
+} else {
     // display playLuckOZne div
-  
-    
     var startPlay = document.getElementById('playLuckZone');
-    startPlay.style.display = 'block';
+    startPlay.style.display = 'flex';
     document.getElementById('nickname').readOnly = true;
     blockInput = true
     // timer countdown
@@ -49,6 +58,9 @@ if (getNickname.value === '') {
     document.getElementById('play').disabled = true;
   }
 }
+
+var onPlay = document.getElementById('play');
+onPlay.addEventListener('click', startLuckZone, false);
     
   // countdown timer
 function startTimer(duration, display) {
@@ -63,10 +75,9 @@ function startTimer(duration, display) {
     display.textContent = minutes + ":" + seconds;
 
     if (--timer <= 0 && seconds <= 00) {
-      var gameOver = document.getElementById('gameOver');
+      var gameOver = document.getElementById('countDown');
       gameOver.textContent = "game Over";
-      var showTimeCountdown = document.getElementById('countDown');
-      showTimeCountdown.style.display = 'none';
+  
       document.getElementById('button1').disabled = true;
       document.getElementById('button2').disabled = true;
       document.getElementById('button3').disabled = true;
@@ -111,11 +122,14 @@ button3 = false;
 var button4 = document.getElementById('button4').textContent = 'move fourth soldier';
 button4 = false;
 
+
 var moveImage = {
   moveImage1: function() { 
     if (button1 && button2 && button3 && button4) {
       document.getElementById('congrats').textContent =
         'congratulations ' + getNickname.value + ', you are the new luckZone Guru!!!';
+      var gameOver = document.getElementById('countDown');
+      gameOver.textContent = "";
     } else if (firstImage.innerHTML === firstImagePosition.innerHTML) {
       button1 = true;
     } else {
@@ -127,6 +141,8 @@ var moveImage = {
     if (button1 && button2 && button3 && button4) {
       document.getElementById('congrats').textContent =
         'congratulations ' + getNickname.value + ', you are the new luckZone Guru!!!';
+      var gameOver = document.getElementById('countDown');
+      gameOver.textContent = "";
     } else if (secondImage.innerHTML === secondImagePosition.innerHTML) {
       button2 = true
     } else {
@@ -138,6 +154,8 @@ var moveImage = {
     if (button1 && button2 && button3 && button4) {
       document.getElementById('congrats').textContent =
         'congratulations ' + getNickname.value + ', you are the new luckZone Guru!!!';
+      var gameOver = document.getElementById('countDown');
+      gameOver.textContent = "";
     } else if (thirdImage.innerHTML === thirdImagePosition.innerHTML) {
       button3 = true;
     } else {
@@ -149,6 +167,8 @@ var moveImage = {
   if (button1 && button2 && button3 && button4) {
     document.getElementById('congrats').textContent =
       'congratulations ' + getNickname.value + ', you are the new luckZone Guru!!!';
+    var gameOver = document.getElementById('countDown');
+    gameOver.textContent = "";
   } else if (fourthImage.innerHTML === fourthImagePosition.innerHTML) {
     button4 = true;
   } else {
@@ -157,6 +177,15 @@ var moveImage = {
   }
   }
 };
+
+var buttonOne = document.getElementById('button1');
+buttonOne.addEventListener('click', moveImage.moveImage1, false);
+var buttonTwo = document.getElementById('button2');
+buttonTwo.addEventListener('click', moveImage.moveImage2, false);
+var buttonThree = document.getElementById('button3');
+buttonThree.addEventListener('click', moveImage.moveImage3, false);
+var buttonFour = document.getElementById('button4');
+buttonFour.addEventListener('click', moveImage.moveImage4, false);
   
 
   

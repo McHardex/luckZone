@@ -5,15 +5,21 @@
     <link rel='stylesheet' href='luckZone.css'>
   </head>
   <body>
-    <div>
-      <h1>&amp;LuckZone</h1><span>about</span>
+    <div id='page'>
+    <div class='header'>
+      <ul>
+        <li class='name'>LuckZone</li>
+        <!-- <li class='about'>about</li> -->
+      </ul>
     </div>
     
-    <div>
-      Submit Your nickname
+    <div class='nickname'>
+      <label for='username'>Submit Your nickname</label>
       <input id='nickname' type='text'>
-      <button onclick='submitNickname()' type='submit'>submit</button>
-      <p id='alert'></p>
+      <button id='submit' type='submit'>submit</button>
+    </div>
+    <div class='alert'>
+    <p id='alert'></p>
     </div>
     
     <div id='blockUsername'>
@@ -26,40 +32,41 @@
     
     <!-- div for the instruction tab -->
     <div id='instruction'>
-      <p>instruction</p>
-      <span>put instruction here</span>
+      <h3>instruction</h3>
+      <p>On play, your timer starts. Successfully move each 
+        of the soldiers into the colored box in the middle of 
+        the canvas by clicking repeatedly the corresponding button 
+        for each Soldier. When any of the soldiers is in position, 
+        your button will be locked. Once all the soldiers are in position, 
+        click any of the buttons one more time to get result. <strong>Enjoy LuckZone</strong></p>
     </div>
     
     <!-- ready to play game (play button) -->
-    <div>
+    <div class='startLuckZone'>
       <p>Click play to start luckZone</p>
-      <button id='play' onclick='startLuckZone()'>Play</button>
+      <button id='play'>Play</button>
     </div>
     
     <!-- random no input (dice roll button)-->
-    <div id='playLuckZone' class='playLuckZone'>
+    <div id='playLuckZone' class='playLuckZone button'>
       <div>
-        
-        <button id='button1' onclick='moveImage.moveImage1()'>move soldier 1</button>
+        <button id='button1'>move soldier 1</button>
       </div>
       <div>
-        
-        <button id='button2' onclick='moveImage.moveImage2()'>move soldier 2</button>
+        <button id='button2'>move soldier 2</button>
       </div>
       <div>
-        
-        <button id='button3' onclick='moveImage.moveImage3()'>move soldier 3</button>
+        <button id='button3'>move soldier 3</button>
       </div>
       <div>
-        
-        <button id='button4' onclick='moveImage.moveImage4()'>move soldier 4</button>
+        <button id='button4'>move soldier 4</button>
       </div>
     </div>
-    
+        
+        
     <!-- time counting down -->
     <div id='countDown'>Your time starts now: <span id="time">05:00</span></div>
-    <p id='gameOver'></p>
-    
+
     <!-- table row and column-->
     <div id='table'>
       <table>
@@ -78,74 +85,74 @@
           </tr>
           <tr id='tablerow'>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td id='thirdImage'><img src="images/robot3.jpg" id="img3"></td>
           </tr>
           <tr id='tablerow'>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td></td>
           </tr>
           <tr id='tablerow'>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='faintred'></td>
             <td id='image1'></td>
             <td id='image3'></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='faintred'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td></td>
           </tr>
           <tr id='tablerow'>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='faintred'></td>
             <td id='image2'></td>
             <td id='image4'></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id='tablerow'>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='faintred'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td></td>
           </tr>
           <tr id='tablerow'>
             <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='faintred'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td></td>
+          </tr>
+          <tr id='tablerow'>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
+            <td id='veryFaintRed'></td>
             <td></td>
           </tr>
           <tr id='tablerow'>
@@ -167,11 +174,10 @@
       <p id='congrats'></p>
     </div>
     <!-- starting all over -->
-    <div>
+    <div class ='refreshPage'>
       <button onclick='location.reload()'>start over as a new player</button>
     </div>
-  
-  
+  </div>
     <script src='luckZone.js'></script>
   </body>
 </html>
