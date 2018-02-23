@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Luck Zone- version 2</title>
-    <link rel='stylesheet' href='luckZone.css'>
-  </head>
-  <body>
-    <div class='header'>
-      <div class = 'logo'>
-        <p>LuckZone</p>
-      </div>
-      <div class='welcome'>
-        <p>Welcome! <br>What can we call you?</p> 
-      </div>
-      <div class='nameInput'>
-        <input id='nameInput'type='text'>
-      </div>
-      <div class='instruction'>
-        <p>On play, your timer starts. Successfully move each of the soldiers into the colored box in the middle of the canvas by clicking
-          repeatedly the corresponding button for each Soldier. When any of the soldiers is in position, your button will
-          be locked. Once all the soldiers are in position, click any of the buttons one more time to get result. <strong>Enjoy LuckZone</strong></p>
-      </div>
-      <div class='startGame'>
-        <button type='submit' id='startGame'>Start Game</button>
+
+<head>
+  <title>Luck Zone- version 2</title>
+  <link rel='stylesheet' href='luckZone.css'>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='logo'>
+      <p>LuckZone</p>
+    </div>
+    <div class='page-body'>
+      <div class='page-body-container'>
+        <div class='welcome'>
+          <span>Welcome!</span>
+          <span>What can we call you?</span> 
+        </div>
+        <div class='nameInput'>
+          <input id='nameInput' type='text'>
+        </div>
+        <div class='instruction'>
+          <p>On play, your timer starts. Successfully move each of the soldiers into the colored box in the middle of the canvas
+            by clicking repeatedly the corresponding button for each Soldier. When any of the soldiers is in position, your
+            button will be locked. Once all the soldiers are in position, click any of the buttons one more time to get result.
+          </p>
+          <strong>Enjoy LuckZone</strong>
+        </div>
+        <div class='startGame'>
+          <button type='submit' id='startGame'>Start Game</button>
+        </div>
       </div>
     </div>
-    <script src='luckZone.js'></script>
-  </body>
+  </div>
+  <script src='luckZone.js'></script>
+</body>
+
 </html>
