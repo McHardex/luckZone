@@ -48,7 +48,7 @@ if (getNickname.value === '') {
     document.getElementById('nickname').readOnly = true;
     blockInput = true
     // timer countdown
-    var twoMinutes = 60 * 5,
+    var twoMinutes = 60 * 2,
     display = document.querySelector('#time');
     startTimer(twoMinutes, display);
     // display countdown div
