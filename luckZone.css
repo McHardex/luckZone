@@ -1,37 +1,125 @@
-
-
-html {
-  max-height: 100%;
-  height: 100%;
-}
-
 body {
   height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(187, 250, 222);
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
-#instruction {
-  display: none;
+html {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.playLuckZone {
-  display: none;
+.header {
+  /* Rectangle: */
+  background: #FFFFFF;
+  border: 1px solid #4A90E2;
+  max-width: 635px;
+  margin: 100px auto 100px auto;
+  min-height: 476px;
 }
 
-div#blockUsername {
-  background-image: url(images/warning.png);
-    font-size: 16px;
-    text-align: center;
-    margin-top: 2px;
-    color: #F44336;
-    background-repeat: no-repeat;
-    background-position: 146px;
+.logo {
+  /* Rectangle 2 Copy: */
+background: #4A90E2;
+border: 1px solid #979797;
+width: 635px;
+height: 49px;
 }
 
-/* css for the table */
+.logo p {
+  font-family: Avenir-Book;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.welcome p {
+  /* Welcome! What can we: */
+  font-family: Avenir-Book;
+  font-size: 20px;
+  color: #4A90E2;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.nameInput {
+  text-align: center;
+}
+input#nameInput {
+  /* Rectangle 3: */
+  background: #FFFFFF;
+  border: 1px solid #4A90E2;
+  width: 319px;
+  height: 32px;
+  color: blue;
+  font-size: 20px;
+  text-align: center;
+  font-family: Avenir-Book;
+}
+
+.instruction {
+  margin: 20px 156px;
+}
+
+.instruction p {
+  /* Rectangle 6: */
+  background: #FFFFFF;
+  border: 1px solid #4A90E2;
+  width: 322px;
+  height: 104px;
+  color: blue;
+  font-size: 12px;
+  text-align: center;
+  font-family: Avenir-Book;
+  padding: 4px 6px;
+}
+
+.startGame {
+  text-align: center;
+  margin-top: 34px;
+}
+
+button#startGame {
+  /* Rectangle 4: */
+background: #4A90E2;
+border: 1px solid #979797;
+border-radius: 50px;
+/* Start Game: */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+width: 319px;
+height: 32px;
+}
+
+/* game page 2 */
+.welcomeUser {
+  /* Welcome AdeyBee: */
+  display: inline-flex;
+  font-family: Avenir-Book;
+  font-size: 20px;
+  color: #4A90E2;
+}
+
+.welcomeUser p {
+  margin-left: 10px;
+  margin-top: 21px;
+}
+
+p.timer {
+  margin-top: 21px;
+  margin-left: 280px;
+  border: 1px solid #4A90E2;
+  padding: 0px 22px;
+}
+
+/* table */
+#table {
+  width: 388px;
+  height: 288px;
+  margin-left: 10px;
+}
 table,tr,td {
   border: 1px solid black;
 }
@@ -47,13 +135,6 @@ td {
   width: 40px;
   text-align: center;
 }
-
-/* countdown tab */
-#countDown {
-  display: none;
-}
-
-/* game over div */
 
 table img {
   width: 40px;
@@ -86,177 +167,38 @@ td#veryFaintRed {
   visibility: hidden;
 }
 
-#page {
- border-right: 2px solid white;
-    max-width: 600px;
-    margin: 20px auto 20px auto;
-    background-color: #000000b0;
-    border-left: 2px solid white;
-    border-bottom: 2px double white;
+.instructionPage2 {
+  margin: -357px 393px;
 }
 
-.header {
-  width: 100%;
-    background-color: #040404b3;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li.about {
-  float: right;
-    margin-right: 54px;
-    margin-top: -35px;
-    font-size: 23px;
-    color: white;
-}
-
-li.name {
-  font-size: 45px;
-  font-family: 'Permanent Marker', cursive;
-  margin-left: -38px;
-  color: #f7f7fd;
-  text-shadow: 2px -1px 7px lawngreen;
-  padding: 5px 7px;
-  font-weight: bolder;
-}
-
-.nickname {
-  text-align: center;
-  margin-top: 30px;
-}
-
-label {
-  font-size: 20px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
-}
-
-input#nickname {
-  width: 40%;
-    font-size: 25px;
-    border: 2px solid #000000b0;
-    border-radius: 8px;
-    background-color: beige;
-    color: #9C27B0;
-    padding: 4px 6px;
-}
-
-button#submit {
-  padding: 6px 12px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#alert p {
-  font-size: 20px;
-  color: red;
-
-}
-
-#welcomeNickname {
-  font-size: 40px;
-    text-align: center;
-    margin-top: 20px;
-    color: #FDFCFD;  
-  }
-
-#instruction p {
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    margin-top: -31px;
-    letter-spacing: 2px;
-    background-color: #FFFFFF;
-    text-shadow: 0 0 4px azure;
-}
-
-#instruction h3 {
-  text-align: center;
-    font-size: 36px;
-    margin: 15px auto 45px 200px;
-    color: #F30B0B;
-    border-top: 2px solid #fffcfc;
-    border-bottom: 2px solid #fbf8f8;
-    width: 34%;
-}
-
-.startLuckZone {
-  text-align: center;
-}
-
-.startLuckZone p {
-  font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
-}
-
-button#play {
-  padding: 3px 14px;
-    border-radius: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 0.2em;
-    color: yellow;
-    background-color: #FF5722;
-}
-
-p#alert {
-  text-align: center;
-    font-size: 16px;
-    color: red;
-    
-}
-
-#playLuckZone {
-    justify-content: space-evenly;
-    margin-top: 15px;
-}
-
-#playLuckZone button {
-  padding: 9px 4px;
-    border-radius: 4px;
+.instructionPage2 p {
+  width: 220px;
+    height: 85px;
     font-size: 15px;
-    border: 1px solid black;
-}
-
-#countDown {
-  margin: 20px 54px 0 150px;
-    font-size: 20px;
-    background-color: rgba(219, 112, 112, 0.67);
-    width: 42%;
-    padding: 8px 12px;
-    color: white;
-    text-shadow: brown 2px 2px 2px;
+    border: 1px solid #4A90E2;
+    padding: 4px 2px;
     text-align: center;
 }
 
-#countDown span {
-  color: greenyellow;
-    font-size: 31px;
+.soldierButton {
+  margin: 374px 400px 0;
 }
 
-#table {
-  margin: 20px 84px;
-}
-
-.refreshPage {
-  text-align: center;
-}
-
-.refreshPage button {
-  text-align: center;
-    padding: 7px 9px;
-    border-radius: 11px;
-    font-size: 13px;
-    background-color: chartreuse;
-}
-
-#congrats {
-  margin-top: 20px;
+.soldierButton button {
+  width: 211px;
+    background: #4A90E2;
+    border: 1px solid #979797;
+    border-radius: 50px;
+    height: 27px;
     text-align: center;
-    font-size: 30px;
-    font-weight: bolder;
-    color: green;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.reset {
+  font-family: Avenir-Book;
+  font-size: 14px;
+  margin-left: 489px;
+  color: #4A90E2;
+  margin-top: 26px;
 }
