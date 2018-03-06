@@ -8,7 +8,9 @@ to a red zone at the middle of the canvas. The soldiers
 move with a generated random number hence what really
 then makes it a game of luck.
 
-**how to play**
+#how to play
+
+
 On play, your timer starts. Successfully move each of the 
 soldiers into the colored box in the middle of the canvas 
 by clicking repeatedly the corresponding button for each 
