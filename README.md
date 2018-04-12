@@ -11,7 +11,7 @@ then makes it a game of luck.
 # how to play
 
 
-soldiers into the colored box in the middle of the canvas 
+move soldiers into the colored box in the middle of the canvas 
 by clicking repeatedly the corresponding button for each 
 Soldier. When any of the soldiers is in position, your 
 button will be locked. Once all the soldiers are in position,
