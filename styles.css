@@ -290,6 +290,7 @@ p#alert {
     font-weight: bolder;
     color: green;
 }
+
 @media (max-width: 480px) {
     tr {
         height: 32px;
