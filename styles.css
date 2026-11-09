@@ -92,24 +92,6 @@ td#veryFaintRed {
 }
 
 
-/* making the images setting the comparison true hidden */
-
-#firstImage img {
-    visibility: hidden;
-}
-
-#secondImage img {
-    visibility: hidden;
-}
-
-#thirdImage img {
-    visibility: hidden;
-}
-
-#fourthImage img {
-    visibility: hidden;
-}
-
 .header {
     width: 100%;
     background-color: #040404b3;
