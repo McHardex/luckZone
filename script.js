@@ -62,7 +62,9 @@ var onPlay = document.getElementById('play');
 onPlay.addEventListener('click', startLuckZone, false);
 
 var SOLDIER_COUNT = 4;
+var BEST_TIME_STORAGE_KEY = 'luckZoneBestRemainingSeconds';
 var timerInterval = null;
+var timerRemainingSeconds = null;
 var locked = [false, false, false, false];
 var moveButtons = [];
 var soldiers = [];
@@ -102,10 +104,49 @@ function soldierInOwnCell(index) {
     return soldiers[index].parentNode === cell;
 }
 
+function formatMinutesSeconds(totalSeconds) {
+    var minutes = parseInt(totalSeconds / 60, 10);
+    var seconds = parseInt(totalSeconds % 60, 10);
+    seconds = seconds < 10 ? '0' + seconds : String(seconds);
+    return minutes + ':' + seconds;
+}
+
+function readStoredBestRemainingSeconds() {
+    var raw = localStorage.getItem(BEST_TIME_STORAGE_KEY);
+    if (raw === null) {
+        return null;
+    }
+    var parsed = parseInt(raw, 10);
+    return isNaN(parsed) ? null : parsed;
+}
+
+function renderBestTime() {
+    var bestEl = document.getElementById('bestTime');
+    var stored = readStoredBestRemainingSeconds();
+    if (stored === null) {
+        bestEl.textContent = 'Best: none yet';
+    } else {
+        bestEl.textContent = 'Best: ' + formatMinutesSeconds(stored);
+    }
+}
+
+function maybeStoreBestTimeOnWin(remainingSeconds) {
+    var stored = readStoredBestRemainingSeconds();
+    if (stored === null || remainingSeconds > stored) {
+        localStorage.setItem(BEST_TIME_STORAGE_KEY, String(remainingSeconds));
+        renderBestTime();
+    }
+}
+
 function showGuru() {
+    if (timerRemainingSeconds !== null) {
+        maybeStoreBestTimeOnWin(timerRemainingSeconds);
+    }
     document.getElementById('congrats').textContent =
         'congratulations ' + getNickname.value + ', you are the new luckZone Guru!!!';
 }
+
+renderBestTime();
 
 function endRoundOnTimeout() {
     stopClock();
@@ -124,6 +165,7 @@ function startTimer(duration, display) {
     var remaining = duration;
 
     function render() {
+        timerRemainingSeconds = remaining;
         var minutes = parseInt(remaining / 60, 10);
         var seconds = parseInt(remaining % 60, 10);
         minutes = minutes < 10 ? '0' + minutes : minutes;
