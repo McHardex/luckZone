@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     max-height: 100%;
     height: 100%;
@@ -13,8 +19,10 @@ body {
 
 #page {
     border-right: 2px solid white;
+    width: 100%;
     max-width: 600px;
-    margin: 20px auto 20px auto;
+    margin: 20px auto;
+    padding: 0 8px 16px;
     background-color: #068e6070;
     border-left: 2px solid white;
     border-bottom: 2px double white;
@@ -35,7 +43,8 @@ div#blockUsername {
     margin-top: 2px;
     color: #F44336;
     background-repeat: no-repeat;
-    background-position: 146px;
+    background-position: center top;
+    padding-top: 28px;
 }
 
 
@@ -131,7 +140,8 @@ label {
 }
 
 input#nickname {
-    width: 40%;
+    width: min(100%, 220px);
+    max-width: 90vw;
     font-size: 25px;
     border: 2px solid #000000b0;
     border-radius: 8px;
@@ -171,11 +181,11 @@ button#submit {
 #instruction h3 {
     text-align: center;
     font-size: 36px;
-    margin: 15px auto 45px 200px;
+    margin: 15px auto 45px;
     color: #F30B0B;
     border-top: 2px solid #fffcfc;
     border-bottom: 2px solid #fbf8f8;
-    width: 34%;
+    width: min(100%, 220px);
 }
 
 .startLuckZone {
@@ -205,8 +215,11 @@ p#alert {
 }
 
 #playLuckZone {
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     margin-top: 15px;
+    padding: 0 4px;
 }
 
 #playLuckZone button {
@@ -217,10 +230,10 @@ p#alert {
 }
 
 #countDown {
-    margin: 20px 54px 0 150px;
+    margin: 20px auto 0;
     font-size: 20px;
     background-color: rgba(219, 112, 112, 0.67);
-    width: 42%;
+    width: min(100%, 280px);
     padding: 8px 12px;
     color: white;
     text-shadow: brown 2px 2px 2px;
@@ -233,7 +246,14 @@ p#alert {
 }
 
 #table {
-    margin: 20px 84px;
+    margin: 20px auto;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#table table {
+    margin: 0 auto;
 }
 
 .refreshPage {
@@ -254,4 +274,86 @@ p#alert {
     font-size: 30px;
     font-weight: bolder;
     color: green;
+}
+
+@media (max-width: 480px) {
+    li.name {
+        font-size: 32px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #welcomeNickname {
+        font-size: 28px;
+        padding: 0 8px;
+    }
+
+    #instruction h3 {
+        font-size: 28px;
+    }
+
+    #instruction p {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        padding: 0 8px;
+    }
+
+    input#nickname {
+        font-size: 18px;
+        display: block;
+        margin: 8px auto;
+    }
+
+    button#submit {
+        margin-top: 8px;
+    }
+
+    #playLuckZone button {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 140px;
+    }
+
+    tr {
+        height: 32px;
+    }
+
+    td {
+        width: 32px;
+        min-width: 32px;
+    }
+
+    table img {
+        width: 32px;
+        height: 32px;
+    }
+
+    #countDown span {
+        font-size: 24px;
+    }
+
+    #congrats {
+        font-size: 22px;
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    tr {
+        height: 28px;
+    }
+
+    td {
+        width: 28px;
+        min-width: 28px;
+    }
+
+    table img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #playLuckZone button {
+        font-size: 13px;
+        min-width: 120px;
+    }
 }
