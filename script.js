@@ -85,10 +85,13 @@ function stopClock() {
     }
 }
 
+function lockMoveButton(button) {
+    button.disabled = true;
+    button.classList.add('soldier-button--locked');
+}
+
 function disableMoveButtons() {
-    moveButtons.forEach(function(button) {
-        button.disabled = true;
-    });
+    moveButtons.forEach(lockMoveButton);
 }
 
 function allLocked() {
@@ -169,7 +172,7 @@ function moveSoldier(index) {
 
     if (soldierInOwnCell(index)) {
         locked[index] = true;
-        moveButtons[index].disabled = true;
+        lockMoveButton(moveButtons[index]);
         moveButtons[index].textContent = 'locked';
         if (allLocked()) {
             stopClock();

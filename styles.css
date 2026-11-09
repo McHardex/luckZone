@@ -9,6 +9,7 @@ body {
     padding: 0;
     background-color: rgba(241, 247, 244, 0.43);
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 #page {
@@ -205,15 +206,44 @@ p#alert {
 }
 
 #playLuckZone {
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     margin-top: 15px;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+#playLuckZone > div {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #playLuckZone button {
+    width: 100%;
+    max-width: 168px;
     padding: 9px 4px;
     border-radius: 4px;
     font-size: 15px;
-    border: 1px solid black;
+    border: 2px solid #000000b0;
+    font-weight: bold;
+    background-color: #FF5722;
+    color: yellow;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+#playLuckZone button.soldier-button--locked,
+#playLuckZone button:disabled {
+    background-color: #bdbdbd;
+    color: #616161;
+    border-color: #757575;
+    box-shadow: none;
+    cursor: default;
+    font-weight: normal;
+    opacity: 1;
 }
 
 #countDown {
@@ -233,7 +263,15 @@ p#alert {
 }
 
 #table {
-    margin: 20px 84px;
+    margin: 20px auto;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 0 4px;
+}
+
+#table table {
+    margin: 0 auto;
 }
 
 .refreshPage {
@@ -254,4 +292,67 @@ p#alert {
     font-size: 30px;
     font-weight: bolder;
     color: green;
+}
+
+@media (max-width: 480px) {
+    #page {
+        margin: 8px auto;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    li.name {
+        font-size: 32px;
+        margin-left: 0;
+    }
+
+    #welcomeNickname {
+        font-size: 24px;
+        padding: 0 8px;
+    }
+
+    #instruction h3 {
+        margin: 15px auto 24px auto;
+        width: auto;
+    }
+
+    #instruction p {
+        margin-top: 0;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    #countDown {
+        margin: 12px auto;
+        width: calc(100% - 16px);
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+
+    #playLuckZone button {
+        font-size: 13px;
+        padding: 8px 2px;
+    }
+
+    tr {
+        height: 32px;
+    }
+
+    td {
+        width: 32px;
+        min-width: 32px;
+        max-width: 32px;
+        padding: 0;
+    }
+
+    table img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+
+    input#nickname {
+        width: 55%;
+        font-size: 18px;
+    }
 }
